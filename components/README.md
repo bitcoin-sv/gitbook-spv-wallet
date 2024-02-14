@@ -1,0 +1,17 @@
+---
+description: Overview of the implementation
+---
+
+# 🍡 Components
+
+Deploying the SPV Wallet will spin up a number of containerized services to create something which at a high level looks like the diagram below.
+
+<figure><img src="../.gitbook/assets/network topology 11 (1).png" alt=""><figcaption><p>High Level Components of the SPV Wallet</p></figcaption></figure>
+
+We see that there are two user interfaces, the Wallet App, and the Admin Console. These drive an API hosted by the SPV Wallet Server. This Wallet Server also accepts payments from Other Wallets, and Broadcasts Transactions to ARC. ARC returns Merkle Paths to confirm transactions, which are validated by checking Merkle roots stored by Pulse.
+
+The SPV Wallet combines the Bux and Pulse components to form a fully operational hosted non-custodial open-source reference wallet for the ecosystem.
+
+{% content-ref url="bux.md" %}
+[bux.md](bux.md)
+{% endcontent-ref %}
