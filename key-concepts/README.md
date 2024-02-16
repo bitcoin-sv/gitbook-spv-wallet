@@ -42,6 +42,6 @@ What we are able to factually determine is that the scripts all evaluate to TRUE
 It is a good question, but misses the point:
 
 1. There is a high cost to faking this data because a hypothetical scammer would have to create genuine spendable outputs with which to attempt to trick someone.
-2. The recipient would find out within a fraction of a second of broadcast if the tx is a double spend attempt. Miners have callback services for this exact purpose.
+2. The recipient would find out within a fraction of a second of broadcast if the tx is a double spend attempt. Nodes have callback services for this exact purpose.
 3. The recipient would then have signed evidence that the counterparty they were doing business with attempted to defraud them.
 4. Payments are negotiated _after_ KYC and AML checks have been completed by each counterparty, so prosecution would be trivial.
