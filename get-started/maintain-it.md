@@ -24,7 +24,7 @@ You ought to copy and paste that into the terminal which you want to use for con
 In order to maintain the application you may need to access the Admin Console. Keys for logging in to that are set during deployment by an automated script. The results of which can be accessed from the EKS cluster using the below command.&#x20;
 
 ```
-kubectl get secrets/bux-keys -o jsonpath='{.data}'
+kubectl get secrets/spv-wallet-keys -o jsonpath='{.data}'
 ```
 
 ## Logs
@@ -38,5 +38,5 @@ kubectl get all
 Most of the logs of interest will likely come from the bux-server app within the deployment. You can follow the trail of logs with this command:
 
 ```
-kubectl logs deployment.apps/bux-server --follow
+kubectl logs deployment.apps/spv-wallet-server --follow
 ```
