@@ -16,8 +16,8 @@ description: Further Reading
 [paymail.md](paymail.md)
 {% endcontent-ref %}
 
-{% content-ref url="bux-server-endpoints.md" %}
-[bux-server-endpoints.md](bux-server-endpoints.md)
+{% content-ref url="endpoints.md" %}
+[endpoints.md](endpoints.md)
 {% endcontent-ref %}
 
 {% content-ref url="additional-components.md" %}

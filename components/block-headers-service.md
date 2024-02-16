@@ -1,18 +1,12 @@
----
-description: A Headers Client on the Bitcoin P2P Network
----
+# 💥 Block Headers Service
 
-# 💚 Pulse
+Block Headers Service runs as part of the SPV Wallet, you do not need to deploy it separately. If you want to run it without the rest of the stack, deployment instructions can be found in the README of the repository in Github.
 
-Pulse runs as part of the SPV Wallet, you do not need to deploy it separately. If you want to run it without the rest of the stack, deployment instructions can be found in the README of the repository in Github.
+{% embed url="https://github.com/bitcoin-sv/block-headers-service" %}
 
-{% embed url="https://github.com/bitcoin-sv/pulse" %}
-Golang Headers Client
-{% endembed %}
+### **Integration of** Block Headers Service
 
-### **Integration of Pulse**
-
-One significant step in the evolution of the SPV Wallet is the integration of Pulse. Pulse is a headers only client, which means it listens to block announcements from mining nodes on the p2p network, requests the block headers, and validates them on receipt to ensure they're part of the longest chain of work. It independently maintains a full history of all block headers, and exposes them via a secure web API. SPV Wallets can use this API to validate the inclusion of a transaction within a particular block.\
+One significant step in the evolution of the SPV Wallet is the integration of Block Headers Service. Block Headers Service listens to block announcements from mining nodes on the p2p network, requests the block headers, and validates them on receipt to ensure they're part of the longest chain of work. It independently maintains a full history of all block headers, and exposes them via a secure web API. SPV Wallets can use this API to validate the inclusion of a transaction within a particular block.\
 This is a critical component of SPV functionality, as it allows confirmation of transactions without downloading the entire blockchain.
 
 The total cumulative size of all blockheaders is currently \~36MB (as of January 2024). When comparing this to storing the whole blockchain, the advantage becomes obvious. The total size of the BSV blockchain at time of writing is over 10TB.
@@ -112,12 +106,12 @@ The <mark style="color:blue;">**Merkle Root**</mark> is what we compare to the c
 </div>
 
 {% hint style="success" %}
-Pulse keeps track of all block headers, so that we can check Merkle Roots during SPV.
+Block Headers Service keeps track of all block headers, so that we can check Merkle Roots during SPV.
 {% endhint %}
 
 {% tabs %}
 {% tab title="Example Request" %}
-Make a POST request to your Pulse `/api/v1/chain/merkleroot/verify`
+Make a POST request to your Block Headers Service `/api/v1/chain/merkleroot/verify`
 
 ```
 [
@@ -149,9 +143,11 @@ You get both individual results for each input, and an overall `confirmationStat
 {% endtabs %}
 
 {% hint style="info" %}
-Some may prefer to use a Java implementation - [HeaderSV](https://github.com/bitcoin-sv/block-headers-client/) which has similar functionality. It lacks an endpoint for Merkle root validation, but could be adapted to work like Pulse.
+Some may prefer to use a Java implementation - [HeaderSV](https://github.com/bitcoin-sv/block-headers-client/) which has similar functionality. It lacks an endpoint for Merkle root validation, but could be adapted to work like Block Headers Service.
 {% endhint %}
 
-{% content-ref url="../how-does-it-work/key-concepts.md" %}
-[key-concepts.md](../how-does-it-work/key-concepts.md)
+
+
+{% content-ref url="../key-concepts/" %}
+[key-concepts](../key-concepts/)
 {% endcontent-ref %}
