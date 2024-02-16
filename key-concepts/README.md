@@ -29,7 +29,7 @@ For small casual payments we need to be able to run SPV without either party wai
 
 It is possible to iterate this recursively so long as every transaction always has parent transactions or a Merkle path associated with it.
 
-With this extrapolated approach, we must also validate each transaction which doesn't have a Merkle path. The validation should confirm that the unlocking scripts evaluate to TRUE, the satoshi amounts are as expected, and the transaction is generally well formed without error. This way we know that when broadcast it will be accepted by miners.
+With this extrapolated approach, we must also validate each transaction which doesn't have a Merkle path. The validation should confirm that the unlocking scripts evaluate to TRUE, the satoshi amounts are as expected, and the transaction is generally well formed without error. This way we know that when we broadcast it will be accepted by the nodes.
 
 ## Common Push Back
 
