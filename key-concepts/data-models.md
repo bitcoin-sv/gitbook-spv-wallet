@@ -31,3 +31,9 @@ TypeScript SDK
 {% embed url="https://github.com/bitcoin-sv/go-sdk" %}
 Golang SDK
 {% endembed %}
+
+
+
+{% content-ref url="broadcasting.md" %}
+[broadcasting.md](broadcasting.md)
+{% endcontent-ref %}

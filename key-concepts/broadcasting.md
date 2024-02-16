@@ -21,3 +21,9 @@ Thereafter we simply broadcast to ARC and expect a `SEEN_ON_NETWORK` txStatus re
 {% swagger src="../.gitbook/assets/arc.json" path="/v1/tx" method="post" %}
 [arc.json](../.gitbook/assets/arc.json)
 {% endswagger %}
+
+
+
+{% content-ref url="../get-started/" %}
+[get-started](../get-started/)
+{% endcontent-ref %}

@@ -34,3 +34,8 @@ Getting Outputs to Pay To
 The Paymail Capability for Delivering SPV Transactions
 {% endembed %}
 
+
+
+{% content-ref url="data-models.md" %}
+[data-models.md](data-models.md)
+{% endcontent-ref %}
