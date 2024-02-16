@@ -11,8 +11,8 @@ After initial setup of the SPV Wallet you will need to set up an account within 
 The simplest way to set up a new account is with the example Wallet App. Technically you can register an xpub with the Admin Console, CLI, or with your own application using the go-client or js-client (see the [Dev Docs](https://app.gitbook.com/o/XRhTy6ZTa7k6aGkXcfRv/s/XXlVD1d5DMU8RH6DWSb7/) for details) but let's keep it simple here.
 
 {% tabs %}
-{% tab title="Bux-Wallet" %}
-To begin, navigate to **https://bux-wallet.**_**yourdomain.tld**_ replacing the latter part with your own domain, keeping only the subdomain `bux-wallet`. Hit the "Sign up now!" link to create a new account.
+{% tab title="Wallet" %}
+To begin, navigate to **https://wallet.**_**yourdomain.tld**_ replacing the latter part with your own domain, keeping only the subdomain `wallet`. Hit the "Sign up now!" link to create a new account.
 
 <figure><img src="../.gitbook/assets/Untitled 2.jpg" alt=""><figcaption></figcaption></figure>
 {% endtab %}
