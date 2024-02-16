@@ -45,3 +45,11 @@ It is a good question, but misses the point:
 2. The recipient would find out within a fraction of a second of broadcast if the tx is a double spend attempt. Nodes have callback services for this exact purpose.
 3. The recipient would then have signed evidence that the counterparty they were doing business with attempted to defraud them.
 4. Payments are negotiated _after_ KYC and AML checks have been completed by each counterparty, so prosecution would be trivial.
+
+In conclusion - SPV works for the same reason Bitcoin itself works - the incentive models guide the behavior of participants.
+
+
+
+{% content-ref url="spv-definition.md" %}
+[spv-definition.md](spv-definition.md)
+{% endcontent-ref %}
