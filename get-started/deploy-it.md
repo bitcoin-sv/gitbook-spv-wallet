@@ -1,5 +1,5 @@
 ---
-description: 'Deployment guide to run your own SPV Wallet: BUX'
+description: Deployment guide to run your own SPV Wallet
 ---
 
 # 🚀 Deploy It
@@ -71,9 +71,10 @@ After submitting stack creation it will take up to 30 minutes to create all reso
 {% hint style="info" %}
 These subdomains will be created for the application
 
-* **bux-wallet.**_yourdomain.com_
-* **bux-console.**_yourdomain.com_
-* **bux-server.**_yourdomain.com_
+* **wallet.**_yourdomain.com_
+* **admin.**_yourdomain.com_
+* **api.**_yourdomain.com_
+* _**headers**.yourdomain.com_
 {% endhint %}
 
 #### Accessing EKS cluster
@@ -84,7 +85,7 @@ In the Outputs Tab you will find prepared aws eks update-kubeconfig command to c
 
 You can delete resources by deleting the CloudFormation stack.
 
-All data within Bux server and wallet will be deleted.
+All data within SPV Wallet will be deleted.
 
 Manual delete is required for log groups.
 
