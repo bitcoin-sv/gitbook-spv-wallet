@@ -42,7 +42,3 @@ description: What it does today and what it will do as we continue development.
 * [ ] As a user I want to be able to handle tokens whether fungible or not.
 {% endtab %}
 {% endtabs %}
-
-{% content-ref url="components/" %}
-[components](components/)
-{% endcontent-ref %}

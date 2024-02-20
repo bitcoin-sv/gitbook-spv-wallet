@@ -17,7 +17,3 @@ At a high level there are admin functionalities exposed like creating a new alia
 The client functionality is more about drafting new transactions, modifying them, signing an actioning them in terms of sending to counterparty hosts, generating new locking scripts.
 
 The public facing endpoints are all associated with Paymail service discovery and capabilities, which are detailed in [Payments Flow](../key-concepts/payments-flow.md).
-
-{% content-ref url="storage.md" %}
-[storage.md](storage.md)
-{% endcontent-ref %}

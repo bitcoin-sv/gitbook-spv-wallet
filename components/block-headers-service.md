@@ -145,9 +145,3 @@ You get both individual results for each input, and an overall `confirmationStat
 {% hint style="info" %}
 Some may prefer to use a Java implementation - [HeaderSV](https://github.com/bitcoin-sv/block-headers-client/) which has similar functionality. It lacks an endpoint for Merkle root validation, but could be adapted to work like Block Headers Service.
 {% endhint %}
-
-
-
-{% content-ref url="../key-concepts/" %}
-[key-concepts](../key-concepts/)
-{% endcontent-ref %}

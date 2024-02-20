@@ -33,9 +33,3 @@ Getting Outputs to Pay To
 {% embed url="https://bsv.brc.dev/payments/0070" %}
 The Paymail Capability for Delivering SPV Transactions
 {% endembed %}
-
-
-
-{% content-ref url="data-models.md" %}
-[data-models.md](data-models.md)
-{% endcontent-ref %}

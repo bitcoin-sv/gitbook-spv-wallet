@@ -103,9 +103,3 @@ The <mark style="color:blue;">**Merkle Root**</mark> is what we compare to the c
 <figure><img src="../.gitbook/assets/merkle proof.gif" alt=""><figcaption><p>Getting from a txid to a Merkle root.</p></figcaption></figure>
 
 </div>
-
-
-
-{% content-ref url="payments-flow.md" %}
-[payments-flow.md](payments-flow.md)
-{% endcontent-ref %}

@@ -19,9 +19,3 @@ The specifics of the implementation used in the SPV Wallet BUX are contained in 
 {% embed url="https://bsv.brc.dev/transactions/0067" %}
 Simplified Explanation
 {% endembed %}
-
-
-
-{% content-ref url="deep-dive.md" %}
-[deep-dive.md](deep-dive.md)
-{% endcontent-ref %}

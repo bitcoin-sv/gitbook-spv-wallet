@@ -29,9 +29,3 @@ The client libraries themselves are available separately such that integrating w
 #### JavaScript
 
 {% embed url="https://github.com/bitcoin-sv/spv-wallet-js-client" %}
-
-
-
-{% content-ref url="spv-wallet-server.md" %}
-[spv-wallet-server.md](spv-wallet-server.md)
-{% endcontent-ref %}

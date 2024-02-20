@@ -47,9 +47,3 @@ It is a good question, but misses the point:
 4. Payments are negotiated _after_ KYC and AML checks have been completed by each counterparty, so prosecution would be trivial.
 
 In conclusion - SPV works for the same reason Bitcoin itself works - the incentive models guide the behavior of participants.
-
-
-
-{% content-ref url="spv-definition.md" %}
-[spv-definition.md](spv-definition.md)
-{% endcontent-ref %}
