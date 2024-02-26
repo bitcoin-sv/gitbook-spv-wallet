@@ -1,11 +1,6 @@
 ---
 description: Open-source non-custodial hosted wallet for the BSV Blockchain
-cover: .gitbook/assets/Web App SPV Wallet.png
-coverY: 0
 layout:
-  cover:
-    visible: true
-    size: hero
   title:
     visible: true
   description:
