@@ -6,7 +6,7 @@ description: Simplified Payment Verification Definition
 
 The Bitcoin white paper detailed how non-miners could verify transactions given to them.
 
-<figure><img src="../.gitbook/assets/image.png" alt=""><figcaption><p><a href="https://craigwright.net/bitcoin-white-paper.pdf">https://craigwright.net/bitcoin-white-paper.pdf</a></p></figcaption></figure>
+<figure><picture><source srcset="../.gitbook/assets/image (14).png" media="(prefers-color-scheme: dark)"><img src="../.gitbook/assets/image.png" alt=""></picture><figcaption><p><a href="https://craigwright.net/bitcoin-white-paper.pdf">https://craigwright.net/bitcoin-white-paper.pdf</a></p></figcaption></figure>
 
 Dr. Craig S. Wright further detailed his thinking on the topic in several blog posts over the years:
 
