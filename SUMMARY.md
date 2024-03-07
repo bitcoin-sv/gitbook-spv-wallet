@@ -16,6 +16,7 @@
   * [🤖 Data Models](key-concepts/data-models.md)
   * [📣 Broadcasting](key-concepts/broadcasting.md)
 * [🟢 Get started](get-started/README.md)
+  * [⚡ Quickstart](get-started/quickstart.md)
   * [🚀 Deploy It](get-started/deploy-it.md)
   * [💻 Fork It](get-started/fork-it.md)
   * [💸 Use it](get-started/use-it.md)
