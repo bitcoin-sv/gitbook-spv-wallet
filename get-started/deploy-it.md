@@ -81,7 +81,32 @@ These subdomains will be created for the application
 
 In the Outputs Tab you will find prepared aws eks update-kubeconfig command to configure connection to EKS cluster.
 
-### Resource Removal
+
+
+## Update It
+
+To update the stack to the newest available version follow the steps below.
+
+1. Open [AWS console -> Cloud Formation -> Stacks](https://console.aws.amazon.com/cloudformation/home#stacks)
+2. Check if you are in the region where your stack was deployed (it was chosen in [Step 5](deploy-it.md#step-5))
+3. click the name of you stack (without badge NESTED)
+4.  click Update button (at the top of the page on the right side)\
+
+
+    <figure><img src="../.gitbook/assets/image (10).png" alt=""><figcaption></figcaption></figure>
+5. choose "Replace current template" option
+6. ensure Template source is set to "Amazon S3 URL"
+7.  insert following address as a Amazon S3 URL
+
+    * [https://spv-wallet-template.s3.amazonaws.com/spv-wallet/latest/EksStack.template.json](https://spv-wallet-template.s3.amazonaws.com/spv-wallet/latest/EksStack.template.json)
+
+    <figure><img src="../.gitbook/assets/image (9).png" alt=""><figcaption></figcaption></figure>
+8. Click Next button
+   * you can proceed with clicking next button until you reach the summary page
+     * then you need to check the checkboxes right above buttons at the bottom of the page
+     * then you can click the submit button - and this should trigger the update
+
+## Resource Removal
 
 You can delete resources by deleting the CloudFormation stack.
 
