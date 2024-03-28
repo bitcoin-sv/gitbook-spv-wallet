@@ -25,5 +25,4 @@
   * [☝️ BRCs](resources/brcs.md)
   * [🌈 ARC](resources/arc.md)
   * [📬 Paymail](resources/paymail.md)
-  * [📒 Endpoints](resources/endpoints.md)
   * [⛏️ Additional Components](resources/additional-components.md)

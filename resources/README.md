@@ -16,8 +16,8 @@ description: Further Reading
 [paymail.md](paymail.md)
 {% endcontent-ref %}
 
-{% content-ref url="endpoints.md" %}
-[endpoints.md](endpoints.md)
+{% content-ref url="broken-reference" %}
+[Broken link](broken-reference)
 {% endcontent-ref %}
 
 {% content-ref url="additional-components.md" %}

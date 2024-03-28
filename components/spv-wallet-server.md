@@ -8,8 +8,8 @@ This component does the heavy lifting. It exposes the secure Client API, and pub
 
 There are a lot of endpoints - so we've detailed them in a resource page of their own.
 
-{% content-ref url="../resources/endpoints.md" %}
-[endpoints.md](../resources/endpoints.md)
+{% content-ref url="broken-reference" %}
+[Broken link](broken-reference)
 {% endcontent-ref %}
 
 At a high level there are admin functionalities exposed like creating a new alias, adding a new xpub, deleting things.&#x20;
