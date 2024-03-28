@@ -2,11 +2,13 @@
 description: Open API details for the Wallet Server Component
 ---
 
-# 📒 Bux Server Endpoints
+# 📒 Endpoints
 
 {% swagger src="../.gitbook/assets/doc.json" path="/v1/access-key" method="get" %}
 [doc.json](../.gitbook/assets/doc.json)
 {% endswagger %}
+
+testing
 
 {% swagger src="../.gitbook/assets/doc.json" path="/v1/access-key" method="post" %}
 [doc.json](../.gitbook/assets/doc.json)
