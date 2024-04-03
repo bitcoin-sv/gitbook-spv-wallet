@@ -57,6 +57,24 @@ It's worth to mention that after first go through those questions, the script ca
 ./start.sh -l
 ```
 
+### Utilized Ports
+
+Each of the running components uses a different port which is exposed so that they can be externally connected to or only certain components can be run in a Docker environment while the rest locally.
+
+List of Used Ports:
+
+| Service               | Port(s) |
+|-----------------------|---------|
+| spv-wallet-admin      | 3000    |
+| spv-wallet-frontend   | 3002    |
+| spv-wallet            | 3003    |
+| Redis                 | 6379    |
+| PostgreSQL            | 5432    |
+| block-headers-service | 8080    |
+| spv-wallet-backend    | 8180    |
+| MongoDB               | 27017   |
+| Traefik               | 80, 443 |
+
 ### Exposing on public domains
 
 There is an important topic that should be mentioned in this place. If you want to expose the services on the public domains (for example to receive transactions), you must pay attention to the two options (questions in the script).
