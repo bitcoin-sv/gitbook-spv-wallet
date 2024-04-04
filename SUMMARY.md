@@ -21,6 +21,7 @@
   * [💻 Fork It](get-started/fork-it.md)
   * [💸 Use it](get-started/use-it.md)
   * [🔨 Maintain it](get-started/maintain-it.md)
+* [Developer Docs](deverloper-docs/README.md)
 * [📚 Resources](resources/README.md)
   * [☝️ BRCs](resources/brcs.md)
   * [🌈 ARC](resources/arc.md)
