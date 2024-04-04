@@ -28,6 +28,7 @@
   * [Block Headers Service](developer-docs/block-headers-service/README.md)
   * [Paymail](developer-docs/go-paymail/README.md)
   * [Go Client](developer-docs/spv-wallet-go-client/README.md)
+    * [Authentication](developer-docs/spv-wallet-go-client/authentication.md)
   * [JS Client](developer-docs/spv-wallet-js-client/README.md)
 * [📚 Resources](resources/README.md)
   * [☝️ BRCs](resources/brcs.md)
