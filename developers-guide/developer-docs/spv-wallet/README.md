@@ -4,10 +4,10 @@ Complete stand-alone server using the SPV Wallet engine to manage xpubs, utxos, 
 
 ## Table of Contents
 
-1. [How to run it?](../../../developer-docs/spv-wallet/how\_to\_run.md)
-2. [Configuration](../../../developer-docs/spv-wallet/configuration.md)
-3. [Authentication](../../../developer-docs/spv-wallet/authentication.md)
-4. [Transactions](../../../developer-docs/spv-wallet/transactions/)
+1. [How to run it?](how\_to\_run.md)
+2. [Configuration](configuration.md)
+3. [Authentication](authentication.md)
+4. [Transactions](transactions.md)
 
 ## SPV and BEEF
 
@@ -23,13 +23,13 @@ After broadcasting or receiving a transaction, SPV Wallet will query Arc API (or
 
 By having this information we can easily verify all merkle proofs which is a part of SPV protocol.
 
-To verify merkleroots we need to have a block headers service running. More about BUMP you can read [here](../../../developer-docs/spv-wallet/transactions/bump.md).
+To verify merkleroots we need to have a block headers service running. More about BUMP you can read [here](https://brc.dev/74).
 
 **Useful links:**
 
 [BUMP](https://bsv.brc.dev/transactions/0074)\
 [BEEF](https://bsv.brc.dev/transactions/0062)\
-[SPV](https://bsv.brc.dev/transactions/0067)
+[SPV](broken-reference)
 
 ### SPV Wallet HTTP Server
 
