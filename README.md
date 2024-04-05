@@ -34,7 +34,7 @@ In the following sections, we will delve into the technical details of SPV, expl
 ## Benefits
 
 {% hint style="success" %}
-### Secure
+**Secure**
 
 Transactions are verified instantly using SPV, network approval is obtained within 5 seconds, and proof of inclusion obtained as soon as they're mined.
 
@@ -42,7 +42,7 @@ The non-custodial model allows private keys to remain broadly distributed, reduc
 {% endhint %}
 
 {% hint style="success" %}
-### **Scalable**
+**Scalable**
 
 Address based payments require recipients to filter through all transactions to find relevant ones. This requires global indexing which has proven difficult to scale.
 
@@ -50,7 +50,7 @@ The SPV approach circumvents this entirely by enabling counterparties to communi
 {% endhint %}
 
 {% hint style="success" %}
-### **Cost Savings**
+**Cost Savings**
 
 Operational cost is proportional to use rather than to overall network transaction volume. This is achieved by keeping block headers, ignoring external transactions, and using Merkle proofs.
 
@@ -58,7 +58,7 @@ In addition, the BSV Association will actively support the open source software 
 {% endhint %}
 
 {% hint style="success" %}
-### **Legal**
+**Legal**
 
 With direct transmission between counterparties, you get SSL certificates, IP addresses, PKI signatures, and payment metadata on your terms. Regulatory compliance is easy when considering KYC, AML, or Travel Rule requirements, all without compromising user privacy
 {% endhint %}
