@@ -4,9 +4,9 @@ The Block Headers Service is a standalone service that communicates with the Bit
 
 ## Table of Contents
 
-  - [How it is used in the SPV Wallet ecosystem](#how-it-is-used-in-the-spv-wallet-ecosystem)
-  - [How merkle roots are verified](#how-merkle-roots-are-verified)
-  - [Authentication](#authentication)
+* [How it is used in the SPV Wallet ecosystem](block-headers-service.md#how-it-is-used-in-the-spv-wallet-ecosystem)
+* [How merkle roots are verified](block-headers-service.md#how-merkle-roots-are-verified)
+* [Authentication](block-headers-service.md#authentication)
 
 ## How it is used in the SPV Wallet ecosystem
 
@@ -16,7 +16,7 @@ This service exposes a REST API with multiple endpoints, the most important from
 
 `GET /chain/merkleroots/verify`
 
-![Merkle Roots Verify](merkleroots.jpg "Merkle Roots Verify Endpoint")
+![Merkle Roots Verify](../../developer-docs/block-headers-service/merkleroots.jpg)
 
 ## How merkle roots are verified
 
@@ -57,7 +57,6 @@ Confirmation passes only if both - blockHeight and merkleRoot are valid pair.
 
 ## Authentication
 
-Block Headers Service API needs a valid Bearer token to be used.
-You can set the token in `config.yaml` file.
+Block Headers Service API needs a valid Bearer token to be used. You can set the token in `config.yaml` file.
 
 When running this service from `start.sh` script, the token would be default and properly set on both `spv-wallet` and `block-headers-service`.

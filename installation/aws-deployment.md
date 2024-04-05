@@ -2,7 +2,7 @@
 description: Deployment guide to run your own SPV Wallet
 ---
 
-# 🚀 Deploy It
+# 🚀 AWS Deployment
 
 ### Step 1
 
@@ -79,32 +79,31 @@ These subdomains will be created for the application
 
 #### Accessing EKS cluster
 
-In the Outputs Tab you will find prepared aws eks update-kubeconfig command to configure connection to EKS cluster.
+In the Outputs Tab you will find prepared aws eks update-kubeconfig command to configure connection to EKS cluster. More detail on how to use that in the [#maintenance](aws-deployment.md#maintenance "mention") section.
 
+***
 
-
-## Update It
+## Updating the Deployment
 
 To update the stack to the newest available version follow the steps below.
 
 1. Open [AWS console -> Cloud Formation -> Stacks](https://console.aws.amazon.com/cloudformation/home#stacks)
-2. Check if you are in the region where your stack was deployed (it was chosen in [Step 5](deploy-it.md#step-5))
-3. click the name of you stack (without badge NESTED)
-4.  click Update button (at the top of the page on the right side)\
+2. Make sure you're in the same region you chose in [Step 5](aws-deployment.md#step-5).
+3. Click your top level stack, the one without the `NESTED` badge.
+4.  Click the Update button at the top right.\
 
 
     <figure><img src="../.gitbook/assets/image (10).png" alt=""><figcaption></figcaption></figure>
-5. choose "Replace current template" option
-6. ensure Template source is set to "Amazon S3 URL"
-7.  insert following address as a Amazon S3 URL
+5. Choose "**Replace current template**" option
+6. Ensure Template source is set to "**Amazon S3 URL**"
+7.  Use this as the template URL: \
+    `https://spv-wallet-template.s3.amazonaws.com/spv-wallet/latest/EksStack.template.json`\
 
-    * [https://spv-wallet-template.s3.amazonaws.com/spv-wallet/latest/EksStack.template.json](https://spv-wallet-template.s3.amazonaws.com/spv-wallet/latest/EksStack.template.json)
 
     <figure><img src="../.gitbook/assets/image (9).png" alt=""><figcaption></figcaption></figure>
-8. Click Next button
-   * you can proceed with clicking next button until you reach the summary page
-     * then you need to check the checkboxes right above buttons at the bottom of the page
-     * then you can click the submit button - and this should trigger the update
+8. Click "**Next**" through the form until you reach the summary page
+   * Check the checkboxes right above buttons at the bottom of the page
+   * Click "**Submit**" - which will trigger the update.
 
 ## Resource Removal
 
@@ -121,5 +120,45 @@ Deleting the deployment will result in **TOTAL LOSS OF FUNDS** held by all accou
 \
 Please ensure all funds are sent out of hosted wallets, and a record of all transactions has been exported prior to deletion of the deployment.
 {% endhint %}
+
+## Terminal Access
+
+One of the first things you'll want to do is gain access to the running components. To do this you'll need to link your local terminal to the EKS cluster, such that you can run standard [`kubectl`](https://kubernetes.io/docs/tasks/tools/) commands.
+
+From the AWS console, you need to navigate to the Cloud Formation service page where you'll find the deployment stack. The `stack-name` deployment stack is what you're looking for, whatever you called it during deployment. There will be a few others which are nested, we want the top level stack.
+
+The outputs tab has something which looks some like:
+
+```bash
+aws eks update-kubeconfig \
+    --name EKSConstructEKSClusterxxxxxxxx-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx \
+    --region=us-east-1 \
+    --role-arn=arn:aws:iam::xxxxxxxxxxxx:role/stack-name-EKSConstructEksMastersRolexxxxxxxx-xxxxxxxxxxxx
+```
+
+You ought to copy and paste that into the terminal which you want to use for controlling the cluster. A prerequisite is that you have already [set up aws cli](https://docs.aws.amazon.com/cli/latest/userguide/getting-started-quickstart.html) in that environment, which usually involved setting a few ENV variables in the console to grant access to your AWS account.
+
+## Admin Keys
+
+In order to maintain the application you may need to access the Admin Console. Keys for logging in to that are set during deployment by an automated script. The results of which can be accessed from the EKS cluster using the below command.&#x20;
+
+```
+kubectl get secrets/spv-wallet-keys -o jsonpath='{.data}'
+```
+
+If you don't have terminal access, you can find the admin keys by adopting the EKS role within AWS console and inspecting the secrets associated with the cluster.
+
+## Logs
+
+Most of the logs of interest will likely come from the spv-wallet-server within the deployment. You can follow the trail of logs with this command:
+
+<pre><code><strong>kubectl logs deployment.apps/spv-wallet-server --follow
+</strong></code></pre>
+
+In order to list the components which you can then inspect, use this command:
+
+```
+kubectl get all
+```
 
 &#x20;

@@ -29,18 +29,6 @@ Developed and maintained by the BSV Association, SPV Wallet is designed to be co
 
 In the following sections, we will delve into the technical details of SPV, explain how it works, and provide step-by-step instructions for setting up and using the wallet. Join us on this journey as we explore the future of Bitcoin SV with SPV Wallet, and discover a new way to manage your digital assets securely and efficiently.
 
-{% content-ref url="get-started/quickstart.md" %}
-[quickstart.md](get-started/quickstart.md)
-{% endcontent-ref %}
-
-{% content-ref url="get-started/deploy-it.md" %}
-[deploy-it.md](get-started/deploy-it.md)
-{% endcontent-ref %}
-
-{% content-ref url="get-started/fork-it.md" %}
-[fork-it.md](get-started/fork-it.md)
-{% endcontent-ref %}
-
 ***
 
 ## Benefits

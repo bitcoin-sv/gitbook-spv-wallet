@@ -8,7 +8,7 @@ description: Some low level explainers and examples to improve understanding.
 
 Storage gets really expensive when you have billions of transactions to store - just ask any miner.
 
-The total cumulative size of all blockheaders is currently \~36MB. When comparing this to storing the whole blockchain, the advantage becomes obvious. The total size of the BSV blockchain at time of writing is over 10TB.
+The total cumulative size of all blockheaders is currently \~68MB. When comparing this to storing the whole blockchain, the advantage becomes obvious. The total size of the BSV blockchain at time of writing is over 10TB.
 
 <figure><picture><source srcset="../.gitbook/assets/RPReplay_Final1702566030-ezgif.com-effects.gif" media="(prefers-color-scheme: dark)"><img src="../.gitbook/assets/RPReplay_Final1702566030.gif" alt=""></picture><figcaption><p>Some blocks in the past have been 4GB in size. This is expected to increase dramatically in future. <br>In contrast, the block header will always and forever be 80 bytes exactly.</p></figcaption></figure>
 

@@ -1,21 +1,19 @@
-# How to run it?
+# How To Run
 
-<!-- Table of Contents -->
-- [How to run it?](#how-to-run-it)
-  - [Running SPV Wallet](#running-spv-wallet)
-    - [Required subdomains (if you are exposing the services on subdomains)](#required-subdomains-if-you-are-exposing-the-services-on-subdomains)
-    - [Paymail domain](#paymail-domain)
-    - [Example of running SPV Wallet](#example-of-running-spv-wallet)
-  - [Launch Verification](#launch-verification)
-  - [Databases](#databases)
-  - [Paymail](#paymail)
-  - [Clients](#clients)
+* [How to run it?](how\_to\_run.md#how-to-run-it)
+  * [Running SPV Wallet](how\_to\_run.md#running-spv-wallet)
+    * [Required subdomains (if you are exposing the services on subdomains)](how\_to\_run.md#required-subdomains-if-you-are-exposing-the-services-on-subdomains)
+    * [Paymail domain](how\_to\_run.md#paymail-domain)
+    * [Example of running SPV Wallet](how\_to\_run.md#example-of-running-spv-wallet)
+  * [Launch Verification](how\_to\_run.md#launch-verification)
+  * [Databases](how\_to\_run.md#databases)
+  * [Paymail](how\_to\_run.md#paymail)
+  * [Clients](how\_to\_run.md#clients)
 
 ## Running SPV Wallet
 
 To run SPV Wallet locally the easiest way is to use provided `start.sh` script.\
-This script will start SPV Wallet with default configuration letting you to provide your own xPub and xPriv.
-When launching it will ask you several questions about services you want to use - so step by step this is how it looks like:
+This script will start SPV Wallet with default configuration letting you to provide your own xPub and xPriv. When launching it will ask you several questions about services you want to use - so step by step this is how it looks like:
 
 ```bash
 ./start.sh
@@ -36,7 +34,7 @@ Select your cache storage:
 2. redis
 # The second question is about cache storage -> using Redis will launch Redis server in Docker container.
 ```
-  
+
 ```bash
 Do you want to run spv-wallet? [Y/n]
 > # First question is about running SPV Wallet, all big letters options are default.
@@ -47,14 +45,14 @@ Do you want to run spv-wallet-admin? [Y/n]
 > # Second question is about running SPV Wallet Admin.
 ```
 
-> Note: You can read more about SPV Wallet Admin [here](../spv-wallet-admin/README.md)
+> Note: You can read more about SPV Wallet Admin [here](../spv-wallet-admin.md)
 
 ```bash
 Do you want to run block-headers-service? [Y/n]
 > # Third question is about running Block Headers Service. It is required to run allow SPV and work with BEEF transactions.
 ```
 
-> Note: If you want to read about Block Headers Service role in SPV -> [go here](../block-headers-service/README.md)
+> Note: If you want to read about Block Headers Service role in SPV -> [go here](../block-headers-service.md)
 
 ```bash
 Do you want to run spv-wallet-web-frontend? [Y/n]
@@ -81,13 +79,13 @@ Do you want to expose the services on and its subdomains? [y/N]
 
 ### Required subdomains (if you are exposing the services on subdomains)
 
-1. SPV Wallet -> wallet.$paymail_domain
-2. SPV Wallet Web Backend -> api.$paymail_domain
-3. Block Headers Service -> headers.$paymail_domain
-4. SPV Wallet Admin -> admin.$paymail_domain
+1. SPV Wallet -> wallet.$paymail\_domain
+2. SPV Wallet Web Backend -> api.$paymail\_domain
+3. Block Headers Service -> headers.$paymail\_domain
+4. SPV Wallet Admin -> admin.$paymail\_domain
 
-Few notes to highlight: \
-**$paymail_domain** is a domain you registered for paymails.
+Few notes to highlight:\
+**$paymail\_domain** is a domain you registered for paymails.
 
 It is taken from the script.sh ->
 
@@ -108,7 +106,7 @@ When you transfer your funds the transaction begins with checking paymail capabi
 
 > To work with paymail locally, you can use services like [ngrok](https://ngrok.com/) or [localtunnel](https://localtunnel.github.io/www/).
 
-Paymail itself is described in [this document](#paymail).
+Paymail itself is described in [this document](how\_to\_run.md#paymail).
 
 ### Example of running SPV Wallet
 
@@ -116,8 +114,7 @@ Paymail itself is described in [this document](#paymail).
 
 ## Launch Verification
 
-SPV Wallet by default is running on port `3003` and you can access it by `http://localhost:3003` (if you run it locally).
-After calling this address you should see this:
+SPV Wallet by default is running on port `3003` and you can access it by `http://localhost:3003` (if you run it locally). After calling this address you should see this:
 
 ```json
 {"message":"Welcome to the SPV Wallet ✌(◕‿-)✌"}
@@ -134,13 +131,12 @@ SPV Wallet needs to have database connection where SPV Wallet engine can store d
 
 Database connection, like everything in SPV Wallet, is defined in config [files](configuration.md).
 
-> You can find extended description of SPV Wallet Engine database [here](./engine/db/README.md)
+> You can find extended description of SPV Wallet Engine database [here](engine/db.md)
 
 ## Paymail
 
-Before starting SPV Wallet you need to have a [paymail](../../paymail/README.md) domain properly configured.\
-At first it is necessary to add SRV record to domain which you want to use as paymail domain.
-This record will be used for service discovery by Paymail clients - pointing them to your host.
+Before starting SPV Wallet you need to have a [paymail](../../../paymail/) domain properly configured.\
+At first it is necessary to add SRV record to domain which you want to use as paymail domain. This record will be used for service discovery by Paymail clients - pointing them to your host.
 
 Example of SRV record:
 
@@ -156,12 +152,9 @@ Port        443
 Target      <endpoint-discovery-host>
 ```
 
-> More information about setting up SRV record [here](https://bsvalias.org/02-01-host-discovery.html)\
+> More information about setting up SRV record [here](https://bsvalias.org/02-01-host-discovery.html)\\
 
-After setting up SRV record you need to activate DNSSEC for your domain. DNSSEC,
-short for Domain Name System Security Extensions, is a set of security measures designed to add cryptographic integrity
-to the Domain Name System (DNS). DNSSEC aims to provide authentication and data integrity to DNS responses,
-protecting against various types of attacks such as DNS spoofing and cache poisoning.
+After setting up SRV record you need to activate DNSSEC for your domain. DNSSEC, short for Domain Name System Security Extensions, is a set of security measures designed to add cryptographic integrity to the Domain Name System (DNS). DNSSEC aims to provide authentication and data integrity to DNS responses, protecting against various types of attacks such as DNS spoofing and cache poisoning.
 
 > Note: it is possible to use subdomains as paymail domains e.g. `paymail1.spvwallet.com` `paymail2.spvwallet.com` ...
 
@@ -173,6 +166,6 @@ To use SPV Wallet you can choose between provided clients.
 
 Three options are available:
 
-1. [spv-wallet-go-client](../spv-wallet-go-client/README.md) - Golang
-2. [spv-wallet-js-client](../spv-wallet-js-client/README.md) - JavaScript
-3. [spv-wallet-admin-keygen](../spv-wallet-admin-keygen/README.md) - SPV Wallet Admin Keygen
+1. [spv-wallet-go-client](../spv-wallet-go-client/) - Golang
+2. [spv-wallet-js-client](../spv-wallet-js-client.md) - JavaScript
+3. [spv-wallet-admin-keygen](../spv-wallet-admin-keygen.md) - SPV Wallet Admin Keygen

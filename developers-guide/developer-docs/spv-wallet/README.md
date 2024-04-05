@@ -1,14 +1,13 @@
 # SPV Wallet
 
-Complete stand-alone server using the SPV Wallet engine to manage xpubs, utxos, destinations, paymails and transactions.
-It's non-custodial wallet, which means that it doesn't store any private keys.
+Complete stand-alone server using the SPV Wallet engine to manage xpubs, utxos, destinations, paymails and transactions. It's non-custodial wallet, which means that it doesn't store any private keys.
 
 ## Table of Contents
 
-1. [How to run it?](how_to_run.md)
-2. [Configuration](configuration.md)
-3. [Authentication](authentication.md)
-4. [Transactions](transactions/README.md)
+1. [How to run it?](../../../developer-docs/spv-wallet/how\_to\_run.md)
+2. [Configuration](../../../developer-docs/spv-wallet/configuration.md)
+3. [Authentication](../../../developer-docs/spv-wallet/authentication.md)
+4. [Transactions](../../../developer-docs/spv-wallet/transactions/)
 
 ## SPV and BEEF
 
@@ -20,13 +19,11 @@ SPV Wallet can do SPV and work with BEEF transactions, you can read more about i
 
 SPV Wallet work with BUMP Merkle Proof format, which is a way to prove that transaction is included in the block.
 
-After broadcasting or receiving a transaction, SPV Wallet will query Arc API (or wait for a callback) to get BUMP for the transaction.
-Having BUMP on any level of ancestry for all inputs of the transaction, allows us to send it to the network.
+After broadcasting or receiving a transaction, SPV Wallet will query Arc API (or wait for a callback) to get BUMP for the transaction. Having BUMP on any level of ancestry for all inputs of the transaction, allows us to send it to the network.
 
 By having this information we can easily verify all merkle proofs which is a part of SPV protocol.
 
-To verify merkleroots we need to have a block headers service running.
-More about BUMP you can read [here](transactions/bump.md).
+To verify merkleroots we need to have a block headers service running. More about BUMP you can read [here](../../../developer-docs/spv-wallet/transactions/bump.md).
 
 **Useful links:**
 

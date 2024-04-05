@@ -6,8 +6,8 @@ description: >-
 
 # ⚡ Quickstart
 
-{% hint style="warning" %}
-**Warning** Using a script is not recommended for production environments. It is designed for development and testing purposes only.
+{% hint style="info" %}
+Using the start script is not recommended for production environments. It is designed for development and testing purposes only.
 {% endhint %}
 
 ## Description
@@ -45,7 +45,7 @@ After running this command, user will be asked several questions about how to ru
 * Which applications should be started?
 * Which domain should be used for Paymail?
 
-If you want to expose the services on the public domains please read the section [Exposing on public domains](broken-reference).
+If you want to expose the services on the public domains please read the section [Exposing on public domains](../get-started/broken-reference/).
 
 After answering all the questions, the script will start the environment and the selected applications. Example of the script output:
 
@@ -64,7 +64,7 @@ Each of the running components uses a different port which is exposed so that th
 List of Used Ports:
 
 | Service               | Port(s) |
-|-----------------------|---------|
+| --------------------- | ------- |
 | spv-wallet-admin      | 3000    |
 | spv-wallet-frontend   | 3002    |
 | spv-wallet            | 3003    |
@@ -135,6 +135,6 @@ In case if you can't saw it because of long log output from working services, yo
 
 ### How can I make a transaction to the wallet?
 
-First ensure that you follow instructions from the section [Exposing on public domains](broken-reference).
+First ensure that you follow instructions from the section [Exposing on public domains](../get-started/broken-reference/).
 
 Then access web wallet at https://wallet.your.domain.tld and register a new account. After that, you can log in and see your paymail address. Then you can access any public wallet which supports paymail and send a transaction to your paymail address.
