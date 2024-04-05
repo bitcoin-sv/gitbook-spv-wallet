@@ -44,17 +44,17 @@ If you don't know which link to pick, just use [us-east-1](https://us-east-1.con
 
 ·       Load Balancer Controller for EKS
 
-·       Bux Components:
+·       SPV Wallet Components:
 
-o   Server
+o  Web App & API
 
-o   Wallet Backend
+o  SPV Wallet Server
 
-o   Wallet Frontend
+o  PostgreSQL Database
 
-o   Console
+o  Web Admin
 
-o   Pulse
+o  Block Headers Service
 
 </details>
 
