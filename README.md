@@ -66,7 +66,7 @@ With direct transmission between counterparties, you get SSL certificates, IP ad
 ## Note
 
 {% hint style="info" %}
-**"LiteClient" has become "SPV Wallet."**
+**"LiteClient" has been replaced by "SPV Wallet"**
 
 The term was often misunderstood since there are multiple components to a complete system and it wasn't clear whether one component was the LiteClient or whether the whole system was. There are multiple clients and servers in this collection of tools which forms the SPV Wallet.
 {% endhint %}
