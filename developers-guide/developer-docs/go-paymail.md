@@ -1,12 +1,12 @@
-# Go Paymail
+# Paymail
 
 Paymail client & server library for Golang. The server is used to register paymail routes, provide capabilities. The client is for making requests to other paymail servers.
 
 ## Table of Contents
 
-- [Client](#create-paymail-client)
-- [Register routes](#routes-which-will-be-registered)
-- [Capabilities](#brfccapabilities)
+* [Client](go-paymail.md#create-paymail-client)
+* [Register routes](go-paymail.md#routes-which-will-be-registered)
+* [Capabilities](go-paymail.md#brfccapabilities)
 
 ## Create paymail client
 
@@ -18,99 +18,99 @@ client, err = paymail.NewClient()
 
 **PaymailServiceProvider** must be implemented in your application in order to be able to use the go paymail client. These methods fetch or save data to the database.
 
-> Example implementation in SPV Wallet [here](https://github.com/bitcoin-sv/spv-wallet/blob/master/engine/paymail_service_provider.go)
+> Example implementation in SPV Wallet [here](https://github.com/bitcoin-sv/spv-wallet/blob/master/engine/paymail\_service\_provider.go)
 
 ### Methods which the client offers
 
-1. **CheckDNSSEC** will check the DNSSEC setting for a given domain. Paymail providers should have DNSSEC enabled for their domain
+1.  **CheckDNSSEC** will check the DNSSEC setting for a given domain. Paymail providers should have DNSSEC enabled for their domain
 
     ```go
     CheckDNSSEC(domain string) (result *DNSCheckResult)
     ```
+2.  **CheckSSL** will do a basic check on the host to see if there is a valid SSL cert. All paymail requests should be via HTTPS and have avalid certificate
 
-2. **CheckSSL** will do a basic check on the host to see if there is a valid SSL cert. All paymail requests should be via HTTPS and have avalid certificate
     ```go
     CheckSSL(host string) (valid bool, err error)
     ```
+3.  **GetBRFCs** will return the list of specs
 
-3. **GetBRFCs** will return the list of specs
     ```go
     GetBRFCs() []*BRFCSpec 
     ```
+4.  **GetCapabilities** will return a list of capabilities for a given domain & port
 
-4. **GetCapabilities** will return a list of capabilities for a given domain & port
     ```go
     GetCapabilities(target string, port int) (response *CapabilitiesResponse, err error)
     ```
+5.  **GetOptions** will return the Client options
 
-5. **GetOptions** will return the Client options
     ```go
     GetOptions() *ClientOptions
     ```
+6.  **GetP2PPaymentDestination** will return list of outputs for the P2P transactions to use
 
-6. **GetP2PPaymentDestination** will return list of outputs for the P2P transactions to use
     ```go
     GetP2PPaymentDestination(p2pURL, alias, domain string, paymentRequest *PaymentRequest) (response *PaymentDestinationResponse, err error)
     ```
+7.  **GetPKI** will return a valid PKI response for a given alias@domain.tld
 
-7. **GetPKI** will return a valid PKI response for a given alias@domain.tld
     ```go
     GetPKI(pkiURL, alias, domain string) (response *PKIResponse, err error)
     ```
+8.  **GetPublicProfile** will return a valid public profile
 
-8. **GetPublicProfile** will return a valid public profile
-   ```go
-   GetPublicProfile(publicProfileURL, alias, domain string) (response *PublicProfileResponse, err error)
-   ```
-
+    ```go
+    GetPublicProfile(publicProfileURL, alias, domain string) (response *PublicProfileResponse, err error)
+    ```
 9.  **GetResolver** will return the internal resolver from the client
+
     ```go
     GetResolver() interfaces.DNSResolver
     ```
-
 10. **GetSRVRecord** will get the SRV record for a given domain name
+
     ```go
     GetSRVRecord(service, protocol, domainName string) (srv *net.SRV, err error)
     ```
-
 11. **GetUserAgent** will return the user agent string of the client
+
     ```go
     GetUserAgent() string
     ```
-
 12. **ResolveAddress** will return a hex-encoded Bitcoin script if successful
+
     ```go
     ResolveAddress(resolutionURL, alias, domain string, senderRequest *SenderRequest) (response *ResolutionResponse, err error)
     ```
+13. **SendP2PTransaction** will submit a transaction hex string (tx\_hex) to a paymail provider
 
-13. **SendP2PTransaction**  will submit a transaction hex string (tx_hex) to a paymail provider
     ```go
     SendP2PTransaction(p2pURL, alias, domain string, transaction *P2PTransaction) (response *P2PTransactionResponse, err error)
     ```
-
 14. **ValidateSRVRecord** will check for a valid SRV record for paymail following specifications
+
     ```go
     ValidateSRVRecord(ctx context.Context, srv *net.SRV, port, priority, weight uint16) error
     ```
-
 15. **VerifyPubKey** will try to match a handle and pubkey
+
     ```go
     VerifyPubKey(verifyURL, alias, domain, pubKey string) (response *VerificationResponse, err error)
     ```
-
 16. **WithCustomHTTPClient** will overwrite the default client with a custom client.
+
     ```go
     WithCustomHTTPClient(client *resty.Client) ClientInterface
     ```
+17. **WithCustomResolver** will allow you to supply a custom dns resolver, useful for testing etc.
 
-17. **WithCustomResolver** will allow you to supply a custom  dns resolver, useful for testing etc.
     ```go
     WithCustomResolver(resolver interfaces.DNSResolver) ClientInterface
     ```
 
 ## Register paymail routes
-By registering paymail routes application is capable to handle requests which are neccessary to handle paymail transactions.
-Method to register routes:
+
+By registering paymail routes application is capable to handle requests which are neccessary to handle paymail transactions. Method to register routes:
 
 ```go
 // RegisterRoutes register all the available paymail routes to the http router
@@ -127,13 +127,14 @@ client.RegisterRoutes(router)
 
 ### Routes which will be registered
 
-- Capabilities (serivce discovery)
+* Capabilities (serivce discovery)
 
-```http request
+```http
 [GET] /.well-known/bsvalias
 ```
 
 Response:
+
 ```json
 {
     "bsvalias": "1.0", // Version of the bsvalias
@@ -149,9 +150,9 @@ Response:
 }
 ```
 
-- PKI request (public key information)
-  
-```http request
+* PKI request (public key information)
+
+```http
 [GET] /v1/bsvalias/id/:paymailAddress
 ```
 
@@ -165,11 +166,14 @@ Response:
 }
 ```
 
-- Verify PubKey request (public key verification to paymail address)
+* Verify PubKey request (public key verification to paymail address)
+
 ```
 [GET] /v1/bsvalias/verify-pubkey/:paymailAddress/:pubKey
 ```
+
 Response
+
 ```json
 {
     "bsvalias": "1.0",                                                              // Version of the bsvalias
@@ -179,9 +183,9 @@ Response
 }
 ```
 
-- Payment Destination request (address resolution)
-  
-```http request
+* Payment Destination request (address resolution)
+
+```http
 [POST] /v1/bsvalias/address/:paymailAddress
 ```
 
@@ -195,9 +199,9 @@ Response:
 }
 ```
 
-- Public Profile request (returns Name & Avatar)
-  
-```http request
+* Public Profile request (returns Name & Avatar)
+
+```http
 [GET] /v1/bsvalias/public-profile/:paymailAddress
 ```
 
@@ -210,9 +214,9 @@ Response:
 }
 ```
 
-- P2P Destination request (returns output & reference)
-  
-```http request
+* P2P Destination request (returns output & reference)
+
+```http
 [GET] /v1/bsvalias/p2p-payment-destination/:paymailAddress
 ```
 
@@ -231,9 +235,9 @@ Response:
 }
 ```
 
-- P2P Receive Tx request (receives the P2P transaction, broadcasts, returns tx_id)
-  
-```http request
+* P2P Receive Tx request (receives the P2P transaction, broadcasts, returns tx\_id)
+
+```http
 [POST] /v1/bsvalias/receive-transaction/:paymailAddress
 ```
 
@@ -248,28 +252,28 @@ Response:
 
 ## BRFC/Capabilities
 
-BRFC (Bitcoin SV Request-For-Comments) Specifications define functionality across the ecosystem. Every new feature have to have a documentation where themetadata are specified: title, author, version. BRFC ID is created from those values by applying double SHA256 hash to byte array created from string(this string is created from connected fields from metada - title, author and version), more informations [here](http://bsvalias.org01-02-brfc-id-assignment.html).
+BRFC (BSV Request-For-Comments) Specifications define functionality across the ecosystem. Every new feature have to have a documentation where themetadata are specified: title, author, version. BRFC ID is created from those values by applying double SHA256 hash to byte array created from string(this string is created from connected fields from metada - title, author and version), more informations [here](http://bsvalias.org01-02-brfc-id-assignment.html).
 
 #### Defined BRFC IDs:
 
-|Variable name                      | BRFC ID           |
-|-----------------------------------|-------------------|
-|**BRFCP2PPaymentDestination**      |**2a40af698840**   |
-|**BRFCP2PTransactions**            |**5f1323cddf31**   |
-|BRFCBasicAddressResolution         |759684b1a19a       |
-|BRFCP2PPaymentDestinationWithToken |f792b6eff07a       |
-|BRFCPaymentDestination             |paymentDestination |
-|BRFCPayToProtocolPrefix            |7bd25e5a1fc6       |
-|BRFCPki                            |pki                |
-|BRFCPkiAlternate                   |0c4339ef99c2       |
-|BRFCPublicProfile                  |f12f968c92d6       |
-|BRFCReceiverApprovals              |3d7c2ca83a46       |
-|BRFCSenderValidation               |6745385c3fc0       |
-|BRFCSFPAssetInformation            |1300361cb2d4       |
-|BRFCSFPAuthoriseAction             |95dddb461bff       |
-|BRFCSFPBuildAction                 |189e32d93d28       |
-|BRFCVerifyPublicKeyOwner           |a9f510c16bde       |
-|BRFCBeefTransaction                |5c55a7fdb7bb       |
+| Variable name                      | BRFC ID            |
+| ---------------------------------- | ------------------ |
+| **BRFCP2PPaymentDestination**      | **2a40af698840**   |
+| **BRFCP2PTransactions**            | **5f1323cddf31**   |
+| BRFCBasicAddressResolution         | 759684b1a19a       |
+| BRFCP2PPaymentDestinationWithToken | f792b6eff07a       |
+| BRFCPaymentDestination             | paymentDestination |
+| BRFCPayToProtocolPrefix            | 7bd25e5a1fc6       |
+| BRFCPki                            | pki                |
+| BRFCPkiAlternate                   | 0c4339ef99c2       |
+| BRFCPublicProfile                  | f12f968c92d6       |
+| BRFCReceiverApprovals              | 3d7c2ca83a46       |
+| BRFCSenderValidation               | 6745385c3fc0       |
+| BRFCSFPAssetInformation            | 1300361cb2d4       |
+| BRFCSFPAuthoriseAction             | 95dddb461bff       |
+| BRFCSFPBuildAction                 | 189e32d93d28       |
+| BRFCVerifyPublicKeyOwner           | a9f510c16bde       |
+| BRFCBeefTransaction                | 5c55a7fdb7bb       |
 
 Capabilities are set by two methods:
 
@@ -296,6 +300,6 @@ func P2PCapabilities(bsvAliasVersion string, senderValidation bool) *paymail.Cap
 }
 ```
 
-By calling `[GET] /.well-known/bsvalias` endpoint you get all available paymail capabilities which are preceded by BRFC ID. [Example response(#Routes-which-will-be-registered)
+By calling `[GET] /.well-known/bsvalias` endpoint you get all available paymail capabilities which are preceded by BRFC ID. \[Example response(#Routes-which-will-be-registered)
 
 If you want to extend them you need to generate new BRFC ID, add new route and handle it as intended.

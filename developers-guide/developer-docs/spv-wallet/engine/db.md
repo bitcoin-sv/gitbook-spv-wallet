@@ -30,13 +30,13 @@ Represents paymail data like _public name, avatar etc._. Model is linked to **xp
 
 ### block\_headers
 
-Represents the BitCoin block header. Model may refer to another **block\_header** record through _hash\_previous\_block_ field.
+Represents the BSV block header. Model may refer to another **block\_header** record through _hash\_previous\_block_ field.
 
 ![block\_headers](../../../../developer-docs/spv-wallet/engine/db/block\_headers.png)
 
 ### transactions
 
-Represents the BitCoin transaction. In the table we store all transactions in the system: outgoing and incomig ones. In other words, **transaction** record is created based on record from **draft\_transactions** (for outgoing) and based on **incoming\_transactions** (for incoming). Outgoing transaction will refer to **draft\_transactions** by _draft\_id_ field, incoming will refer to **incoming\_transactions** by by _id_ field (1:1).
+Represents the BSV transaction. In the table we store all transactions in the system: outgoing and incomig ones. In other words, **transaction** record is created based on record from **draft\_transactions** (for outgoing) and based on **incoming\_transactions** (for incoming). Outgoing transaction will refer to **draft\_transactions** by _draft\_id_ field, incoming will refer to **incoming\_transactions** by by _id_ field (1:1).
 
 > **Note**: Transactions inside the same SPV Walllet Engine system (between two paymails in same system) are recorded as **outgoing** only!
 
@@ -44,7 +44,7 @@ Represents the BitCoin transaction. In the table we store all transactions in th
 
 ### draft\_transactions
 
-Represents the draft _outgoing_ BitCoin transaction prior to the final transaction. Model is linked to **xpubs** by _xpub\_id_ field and **transactions** by _final\_tx\_id_.
+Represents the draft _outgoing_ BSV transaction prior to the final transaction. Model is linked to **xpubs** by _xpub\_id_ field and **transactions** by _final\_tx\_id_.
 
 ![draft-transactions](../../../../developer-docs/spv-wallet/engine/db/draft\_transactions.png)
 
@@ -76,6 +76,6 @@ Represents the incoming (external) transaction (for pre-processing). Model is re
 
 ### utxos
 
-Represents a BitCoin unspent transaction. Model is related to **transactions** by _transaction\_id_ field.
+Represents a BSV unspent transaction. Model is related to **transactions** by _transaction\_id_ field.
 
 ![utxos](../../../../developer-docs/spv-wallet/engine/db/utxos.png)

@@ -1,6 +1,6 @@
 # Engine
 
-## Bitcoin UTXO & xPub Management Engine
+## BSV UTXO & xPub Management Engine
 
 It gathers all methods which are used to store and transform information about xpubs and transactions.\
 To use SPV Wallet you need a SPV Wallet which will be connected with engine.
