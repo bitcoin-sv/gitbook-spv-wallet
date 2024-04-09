@@ -2,14 +2,14 @@
 
 ## Configuration
 
-Contacts feature is currently under development. That means that it is hidden behind a feature flag. To enable it in various components, you need to set 
+Contacts feature is currently under development. That means that it is hidden behind a feature flag. To enable it in various components, you need to set proper flag in config file: 
 
-```json
-{
-    "experimental_features":{
-        "pike_enabled": true
-    }
-}
+```yaml
+(...)
+experimental_features:
+	pike_enabled: true
+
+(...)
 ```
 
 ## Contact states (statuses)
