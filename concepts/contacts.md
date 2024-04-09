@@ -1,6 +1,16 @@
 ---
-description: Contacts is experimental feature based on PIKE protocol. 
+description: Contacts is experimental feature based on PIKE protocol. TODO - add BRC URL describing PIKE.
 ---
+
+## Table of Contents
+- [🤝 Contacts](#-contacts)
+  - [Features](#features)
+    - [Adding/editing contact](#addingediting-contact)
+    - [Accepting contact request](#accepting-contact-request)
+    - [Rejecting contact request](#rejecting-contact-request)
+    - [Confirming contact](#confirming-contact)
+  - [Statuses](#statuses)
+    - [Status transitions](#status-transitions)
 
 # 🤝 Contacts
 
@@ -10,10 +20,10 @@ The Contacts functionality functions similarly to the phonebook feature on your 
 
 The SPV Wallet allows to manage known paymail as contact in specyfic flow: 
 
-1. Alice can add Bob's paymail as *unconfirmed* contact. SPV Wallet will send request to Bob's wallet to add Alice as contact
-2. Bob can accept Alice request or...
-3. Bob can reject Alice request
-4. Alice and Bob can confirm each others identity using TOTP - contacas are *confirmed* now 
+1. Alice can [add](#addingediting-contact) Bob's paymail as *unconfirmed* contact. SPV Wallet will send request to Bob's wallet to add Alice as contact
+2. Bob can [accept](#accepting-contact-request) Alice request or...
+3. Bob can [reject](#rejecting-contact-request) Alice request
+4. Alice and Bob can [confirm](#confirming-contact) each others identity using TOTP - contacas are *confirmed* now 
 
 ### Adding/editing contact
 
@@ -35,8 +45,6 @@ The user has the option to accept contact requests for further processing. Only 
 
 The user has the ability to reject contact requests. Only contacts in the *awaiting for acceptance* status can be rejected. Upon rejection, the contact's status shifts to *rejected*, and the contact cannot be processed further.
 
->NOTICE: SPV Wallet soft deletes rejected contacts.
-
 ![alt text](../.gitbook/assets/contacts/spv_contact_reject.png)
 
 ### Confirming contact
@@ -48,3 +56,17 @@ Only contacts in *unconfirmed* status can be confirmed.
 >NOTICE: Confirmation of Bob's contact by Alice does not result in confirmation of Alice's contact by Bob in his wallet.
 
 ![alt text](../.gitbook/assets/contacts/spv_contact_confirm.png)
+
+## Statuses
+| code | description |
+|------|-------------|
+|unconfirmed| new added contact before confirmation|
+|confirmed| fully trusted, confirmed contat|
+|awaiting| *awaiting for acceptance*  contact request|
+|rejected| contact request that was denied|
+
+### Status transitions
+* *unconfirmed*: status may shift to *confirmed* (*unconfirmed* -> *confirmed*).
+* *confirmed*: is a final contact's status. In most cases, it is immutable. The only aberration is when the SPV Wallet detects that the contact's PKI has been changed; then the status shifts to *unconfirmed*.
+* *awaiting*: is a status of contact request and may shift to *unconfirmed* if the request is accepted or to *rejected* if denied (*awaiting* -> *unconfirmed* | *rejected*).
+* *rejected*: is a final contact request status and cannot be changed.

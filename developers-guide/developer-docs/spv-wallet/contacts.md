@@ -48,9 +48,12 @@ SPV Wallet issues the endpoint `PATCH /contact/confirmed/{paymail}` to mark cont
 >NOTICE: only contacts in *unconfirmed* status can be accepted.
 
 Server responses with statuses:
-* 200 on success
-* 422 if contact has other status then *unconfirmed* 
-* 404 if contact doesn't exist
+
+| HTTP Code | Description |
+|-----------|-------------|
+| 200 | success |
+| 422 | contact has other status then *unconfirmed* |
+| 404 | contact doesn't exist |
 
 ### Adding contact request (PIKE)
 
@@ -65,9 +68,12 @@ SPV Wallet issues the endpoint `PATCH /contact/accepted/{paymail}` to accept con
 >NOTICE: only contacts in *awaiting* status can be accepted.
 
 Server responses with statuses:
-* 200 on success
-* 422 if contact has other status then *awaiting* 
-* 404 if contact doesn't exist
+
+| HTTP Code | Description |
+|-----------|-------------|
+| 200 | success |
+| 422 | contact has other status then *awaiting* |
+| 404 | contact doesn't exist |
 
 ### Rejecting contact request
 
@@ -76,7 +82,9 @@ SPV Wallet issues the endpoint `PATCH /contact/rejected/{paymail}` to reject con
 >NOTICE: only contacts in *awaiting* status can be rejected.
 
 Server responses with statuses:
-* 200 on success
-* 422 if contact has other status then *awaiting* 
-* 404 if contact doesn't exist
 
+| HTTP Code | Description |
+|-----------|-------------|
+| 200 | success |
+| 422 | contact has other status then *awaiting* |
+| 404 | contact doesn't exist |
