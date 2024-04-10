@@ -31,7 +31,7 @@ When Alice is adding a new contact, such as Bob, the wallet verifies Bob's capab
 
 If Alice already has Bob's contact its data will be updated (eg. name, email). Furthermore, if Bob's PKI has been changed post-addition to Alice's contacts, his status shifts to *unconfirmed*.
 
-When SPV Wallet receive PIKE request to add new contact, such as Alice, the wallet verifies Alice's capabilities and if her wallert supports PKI, the contact is saved with *awaiting for acceptance* status. 
+When SPV Wallet receive PIKE request to add new contact, such as Alice, the wallet verifies Alice's capabilities and if her wallet supports PKI, the contact is saved with *awaiting for acceptance* status. 
 
 ![Add contact](../.gitbook/assets/contacts/spv_contact_upsert.png)
 

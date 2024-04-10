@@ -39,7 +39,7 @@ New contact is stored with status *unconfirmed*.
 
 >NOTICE: `RequesterPaymail` in pyaload is respected and required only if user has multiple paymail addresses binded to its `XPub`.
 
-If contact's wallet has PIKE capability request to add user paymail as contact is sent.
+If the contact's wallet supports PIKE capability, a request to add the user's paymail as a contact is sent.
 
 ### Confirming contact
 
