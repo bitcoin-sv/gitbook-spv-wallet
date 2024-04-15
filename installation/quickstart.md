@@ -45,7 +45,7 @@ After running this command, user will be asked several questions about how to ru
 * Which applications should be started?
 * Which domain should be used for Paymail?
 
-If you want to expose the services on the public domains please read the section [Exposing on public domains](../get-started/broken-reference/).
+If you want to expose the services on the public domains please read the section [Exposing on public domains](quickstart.md#exposing-on-public-domains).
 
 After answering all the questions, the script will start the environment and the selected applications. Example of the script output:
 
