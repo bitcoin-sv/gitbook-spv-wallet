@@ -7,7 +7,7 @@ Contacts feature is currently under development. That means that it is hidden be
 ```yaml
 (...)
 experimental_features:
-	pike_enabled: true
+  pike_enabled: true
 
 (...)
 ```
@@ -37,7 +37,7 @@ type UpsertContact struct {
 
 New contact is stored with status *unconfirmed*. 
 
->NOTICE: `RequesterPaymail` in pyaload is respected and required only if user has multiple paymail addresses binded to its `XPub`.
+>NOTICE: `RequesterPaymail` in payload is respected and required only if user has multiple paymail addresses bound to their `XPub`.
 
 If the contact's wallet supports PIKE capability, a request to add the user's paymail as a contact is sent.
 
@@ -57,9 +57,9 @@ Server responses with statuses:
 
 ### Adding contact request (PIKE)
 
-SPV Wallet handles PIKE Add Contact Request functionality. If contact doesn't exist it's saved with *awaiting* status. If already exists and contat PKI has changed since creation and is confirmed already its status shifts to *unconfirmed*.
+SPV Wallet handles the PIKE Add Contact Request functionality. If the contact doesn't exist, it's saved with an *awaiting* status. If the contact already exists and its PKI has changed since creation and is already confirmed, its status shifts to *unconfirmed*.
 
->NOTICE: no additional contact information, besides public key and status, can be overwritten using this functionality.
+>NOTICE: this functionality does not allow overwriting any additional contact information beyond the public key and status.
 
 ### Accepting contact request
 
@@ -77,7 +77,7 @@ Server responses with statuses:
 
 ### Rejecting contact request
 
-SPV Wallet issues the endpoint `PATCH /contact/rejected/{paymail}` to reject contact request. SPV Wallet deletes contacts on rejection but due to using soft delete the record has additionaly status set to *rejected*.
+SPV Wallet issues the endpoint `PATCH /contact/rejected/{paymail}` to reject the contact request. The SPV Wallet deletes contacts upon rejection, but due to using soft delete the record additionally has its status set to *rejected*.
 
 >NOTICE: only contacts in *awaiting* status can be rejected.
 

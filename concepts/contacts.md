@@ -23,7 +23,7 @@ The SPV Wallet allows to manage known paymail as contact in specyfic flow:
 1. Alice can [add](#addingediting-contact) Bob's paymail as *unconfirmed* contact. SPV Wallet will send request to Bob's wallet to add Alice as contact
 2. Bob can [accept](#accepting-contact-request) Alice request or...
 3. Bob can [reject](#rejecting-contact-request) Alice request
-4. Alice and Bob can [confirm](#confirming-contact) each others identity using TOTP - contacas are *confirmed* now 
+4. Alice and Bob can [confirm](#confirming-contact) each others identity using TOTP - contacts are *confirmed* now 
 
 ### Adding/editing contact
 
