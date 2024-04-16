@@ -37,7 +37,7 @@ type UpsertContact struct {
 
 New contact is stored with status *unconfirmed*. 
 
->NOTICE: `RequesterPaymail` in payload is respected and required only if user has multiple paymail addresses bound to their `XPub`.
+>NOTICE: The presence of the `RequesterPaymail` field in the payload is mandatory and respected **only** when a user has multiple paymail addresses associated with their `XPub`.
 
 If the contact's wallet supports PIKE capability, a request to add the user's paymail as a contact is sent.
 
@@ -52,12 +52,12 @@ Server responses with statuses:
 | HTTP Code | Description |
 |-----------|-------------|
 | 200 | success |
-| 422 | contact has other status then *unconfirmed* |
+| 422 | contact has a status other than *unconfirmed* |
 | 404 | contact doesn't exist |
 
 ### Adding contact request (PIKE)
 
-SPV Wallet handles the PIKE Add Contact Request functionality. If the contact doesn't exist, it's saved with an *awaiting* status. If the contact already exists and its PKI has changed since creation and is already confirmed, its status shifts to *unconfirmed*.
+SPV Wallet manages the PIKE Add Contact Request feature. If the contact doesn't exist, it's saved with an *awaiting* status. If the contact already exists and its PKI has changed since creation and is already confirmed, its status shifts to *unconfirmed*.
 
 >NOTICE: this functionality does not allow overwriting any additional contact information beyond the public key and status.
 
@@ -72,7 +72,7 @@ Server responses with statuses:
 | HTTP Code | Description |
 |-----------|-------------|
 | 200 | success |
-| 422 | contact has other status then *awaiting* |
+| 422 | contact has a status other than *awaiting* |
 | 404 | contact doesn't exist |
 
 ### Rejecting contact request
@@ -86,5 +86,5 @@ Server responses with statuses:
 | HTTP Code | Description |
 |-----------|-------------|
 | 200 | success |
-| 422 | contact has other status then *awaiting* |
+| 422 | contact has a status other than *awaiting* |
 | 404 | contact doesn't exist |
