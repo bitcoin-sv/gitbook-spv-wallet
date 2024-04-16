@@ -61,7 +61,7 @@ Only contacts in *unconfirmed* status can be confirmed.
 | code | description |
 |------|-------------|
 |unconfirmed| new added contact before confirmation|
-|confirmed| fully trusted, confirmed contat|
+|confirmed| fully trusted, confirmed contact|
 |awaiting| *awaiting for acceptance*  contact request|
 |rejected| contact request that was denied|
 
