@@ -16,7 +16,11 @@
 ## Installation
 
 * [⚡ Quickstart](installation/quickstart.md)
-* [🚀 AWS Deployment](installation/aws-deployment.md)
+* [🚀 AWS](installation/aws/README.md)
+  * [Installation](installation/aws/installation.md)
+  * [Manage & Maintain](installation/aws/manage-and-maintain.md)
+  * [Update](installation/aws/update.md)
+  * [Delete](installation/aws/delete.md)
 
 ## Concepts
 
