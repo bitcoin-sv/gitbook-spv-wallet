@@ -18,7 +18,7 @@ It's a service discovery mechanism for counterparty web APIs. It allows users to
 
 <div data-full-width="true">
 
-<figure><picture><source srcset="../.gitbook/assets/cae55929eb3dc7aee3651b63bf8a0b76 (1).png" media="(prefers-color-scheme: dark)"><img src="../.gitbook/assets/cae55929eb3dc7aee3651b63bf8a0b76.png" alt=""></picture><figcaption></figcaption></figure>
+<figure><picture><source srcset="../.gitbook/assets/swimlanes-43c7c4ee01b286fea3be26b28804e591 (1).png" media="(prefers-color-scheme: dark)"><img src="../.gitbook/assets/swimlanes-43c7c4ee01b286fea3be26b28804e591.png" alt=""></picture><figcaption></figcaption></figure>
 
 </div>
 
