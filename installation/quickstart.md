@@ -135,6 +135,6 @@ In case if you can't saw it because of long log output from working services, yo
 
 ### How can I make a transaction to the wallet?
 
-First ensure that you follow instructions from the section [Exposing on public domains](quickstart.md#Exposing-on-public-domains).
+First ensure that you follow instructions from the section [Exposing on public domains](quickstart.md#exposing-on-public-domains).
 
 Then access web wallet at https://wallet.your.domain.tld and register a new account. After that, you can log in and see your paymail address. Then you can access any public wallet which supports paymail and send a transaction to your paymail address.
