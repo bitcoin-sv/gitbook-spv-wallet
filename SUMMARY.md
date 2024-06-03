@@ -30,6 +30,7 @@
 * [💵 Payments Flow](concepts/payments-flow.md)
 * [🤖 Data Models](concepts/data-models.md)
 * [📣 Broadcasting](concepts/broadcasting.md)
+* [🤝 Contacts](convepts/contacts.md)
 
 ## Developers Guide
 
