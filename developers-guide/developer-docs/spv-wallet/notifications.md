@@ -9,6 +9,7 @@ The notifications system has the following features:
 - all instances of spv-wallet observe the status of currently-registered webhooks
 - each client has its own queue (golang's buffered channel) so a malfunctioning client does not block other clients
 - retries and timed bans on failure are implemented
+  - defined retries: `2` with delay between retries: `1 second` and the ban time: `1 hour`
 - a webhook call includes a list of events
 - 'Notifications Listener' is implemented in `go-client` so it's ready to use, without detailed knowledge about webhooks.
   - It handles subscription and unsubscription,
@@ -141,7 +142,7 @@ There are three main components:
 
 Channels of type `(chan *models.RawEvent)` can be added to the notification-service. The service will send new events to all registered channels. This approach allows for future extensibility, such as adding support for WebSockets, gRPC, and other communication methods.
 
-When the client calls `subscribe/unsubscribe` endpoint with `url` provided, the state of db webhooks table is updated and then the webhook-manager updates instances of `webhook-notifier`s.
+When the client calls `subscribe/unsubscribe` endpoint with `url` provided, the state of db webhooks table is updated and then the webhook-manager updates instances of `webhook-notifiers`.
 
 During synchronisation to the new state of webhooks, the manager can:
 
