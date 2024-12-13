@@ -8,6 +8,7 @@ Complete stand-alone server using the SPV Wallet engine to manage xpubs, utxos, 
 2. [Configuration](configuration.md)
 3. [Authentication](authentication.md)
 4. [Transactions](transactions.md)
+5. [Contacts](contacts.md)
 
 ## SPV and BEEF
 
